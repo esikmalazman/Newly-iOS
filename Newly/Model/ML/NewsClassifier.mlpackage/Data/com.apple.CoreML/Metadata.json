@@ -1,0 +1,9 @@
+{
+  "MLModelVersionStringKey" : "1.0",
+  "MLModelDescriptionKey" : "This model is a text classifier (version 1) which classifies text according to set {business,tech,politics,entertainment,sport}",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.version" : "11.3.1"
+  },
+  "MLModelAuthorKey" : "Ikmal Azman",
+  "MLModelLicenseKey" : "--"
+}

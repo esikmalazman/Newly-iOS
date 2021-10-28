@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "4E373B2A-6D21-48C5-B4DF-E0268C1CE32D": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "NewsClassifier.mlmodel",
+            "path": "com.apple.CoreML/NewsClassifier.mlmodel"
+        },
+        "87B11A1B-B110-4248-93B4-343A2ECADEA1": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "EA1CBAE6-2E88-48BA-9E20-6E41C280427A": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        }
+    },
+    "rootModelIdentifier": "4E373B2A-6D21-48C5-B4DF-E0268C1CE32D"
+}
