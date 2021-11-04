@@ -11,6 +11,18 @@ import Vision
 //MARK:- Recognize Text in Images , https://developer.apple.com/documentation/vision/recognizing_text_in_images/
 final class TextAnalysisInteractor {
     
+    private let newsClassifier = try! NewsClassifier(configuration: .init())
+    // Batch predictions or news
+    func predictText(_ query : String) -> String? {
+        do {
+            let predictions = try newsClassifier.prediction(text: query).label
+            return predictions
+        } catch {
+            print("Error in predicting text : \(error)")
+        }
+        return nil
+    }
+    
     func processImageToText(imageData : Data, completion : @escaping ((String)-> Void) ) {
         // Create a request to recognize text
         let request = VNRecognizeTextRequest { request, error in
@@ -35,9 +47,9 @@ final class TextAnalysisInteractor {
             // request top candidate for recognize strings
             if let topCandidate = textResult.topCandidates(1).first {
                 recognizedText += topCandidate.string + "\n"
-                print("Text : \(recognizedText)")
-                print("Best candidates : \(topCandidate.string)")
-                print("Confidence : \(topCandidate.confidence)")
+//                print("Text : \(recognizedText)")
+//                print("Best candidates : \(topCandidate.string)")
+//                print("Confidence : \(topCandidate.confidence)")
             }
         }
         
