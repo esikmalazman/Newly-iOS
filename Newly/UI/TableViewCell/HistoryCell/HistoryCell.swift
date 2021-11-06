@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class HistoryCell: UITableViewCell {
-
-    @IBOutlet private var categoryLabel: UILabel!
-    @IBOutlet private var textPlaceholderLabel: UILabel!
+final class HistoryCell : UITableViewCell {
+    //MARK: - Outlets
+    @IBOutlet private weak var categoryLabel: UILabel!
+    @IBOutlet private weak var textPlaceholderLabel: UILabel!
     
     //MARK: - Variables
     static let identifier = "HistoryCell"
@@ -18,6 +18,17 @@ final class HistoryCell: UITableViewCell {
     //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        categoryLabel.textColor = .white
+        textPlaceholderLabel.textColor = .white
+        contentView.layer.cornerRadius = 15
+        contentView.backgroundColor = .primaryPurple
+        let padding = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        contentView.frame = contentView.frame.inset(by: padding)
+        contentView.dropShadow()
     }
     
     override func prepareForReuse() {
@@ -34,9 +45,4 @@ final class HistoryCell: UITableViewCell {
         categoryLabel.text = data.category
         textPlaceholderLabel.text = data.fullText
     }
-    
-    
-    
-    
-    
 }

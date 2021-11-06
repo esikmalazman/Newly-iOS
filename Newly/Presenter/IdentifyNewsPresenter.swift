@@ -10,6 +10,8 @@ import Foundation
 protocol IdentifyNewsPresenterDelegate : AnyObject {
     func presentPredictions(_ text : String)
     func presentText(results : String)
+    func presentHistory(data : History)
+    func presentOptions(button : String)
 }
 
 final class IdentifyNewsPresenter {
@@ -34,4 +36,14 @@ final class IdentifyNewsPresenter {
         }
     }
     
+    func didCompleteClassifyText(category : String? , fullText : String?) {
+        guard let category = category, let fullText = fullText else { return}
+        let historyData = History(category: category, fullText: fullText)
+        delegate?.presentHistory(data: historyData)
+    }
+    
+    func didSelectOptions(source : String?) {
+        guard let title = source else { return}
+        delegate?.presentOptions(button: title)
+    }
 }

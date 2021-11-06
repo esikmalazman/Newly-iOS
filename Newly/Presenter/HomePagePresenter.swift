@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol HomepagePresenterDelegate : AnyObject {}
+protocol HomepagePresenterDelegate : AnyObject {
+    func presentHistoryDetail(_ indexPath : IndexPath)
+}
 
 final class HomepagePresenter {
     
@@ -15,5 +17,9 @@ final class HomepagePresenter {
     
     func setViewDelegate(delegate : HomepagePresenterDelegate) {
         self.delegate = delegate
+    }
+    
+    func didTapRowAt(_ indexPath : IndexPath) {
+        delegate?.presentHistoryDetail(indexPath)
     }
 }
