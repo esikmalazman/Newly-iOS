@@ -10,4 +10,5 @@ import UIKit
 
 extension UIColor {
     static let primaryPurple = UIColor.init(hexString: "#606AE1")
+    static let secondaryBlack = UIColor(named: "textColor")
 }
