@@ -43,10 +43,11 @@ final class IdentifyNewsVC: UIViewController {
         presenter.didCompleteClassifyText(category: classifyLabel.text, fullText: insertedTextView.text)
     }
     
-    @IBAction func optionsButtonTap(_ sender: UIButton) {
-        let title = sender.currentTitle
+    @IBAction func optionsButton(_ sender: UIButton) {
+        let title = sender.titleLabel?.text
         presenter.didSelectOptions(source: title)
     }
+
     
     @IBAction func classifyButtonTap(_ sender: UIButton) {
         let textFromImage = insertedTextView.text!
