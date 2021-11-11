@@ -177,6 +177,7 @@ extension IdentifyNewsVC {
     }
     
     private func configureContentView(with textResults : String) {
+        insertedTextView.isEditable = false
         classifyBtn.tintColor = .white
         classifyLabel.textColor = .white
         classifyBtn.backgroundColor = .primaryPurple
