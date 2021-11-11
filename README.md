@@ -1,7 +1,8 @@
 <img width="100" height="100" alt="spotlight120" src="https://user-images.githubusercontent.com/59039044/140596234-6737b042-e297-4cc8-90bf-c87aedb7bd33.png">
 
 # Newly-iOS
-Text Classifier App for iOS, powered by Apple Vision &amp; CreateML framework
+- Text Classifier App for iOS, powered by Apple Vision &amp; CreateML framework
+-  <a href="https://testflight.apple.com/join/O9AemLOu">Test Flight<a/>
 
 
 ## Description
