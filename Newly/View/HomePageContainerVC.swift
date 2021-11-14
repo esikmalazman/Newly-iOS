@@ -10,9 +10,10 @@ import Lottie
 
 class HomePageContainerVC: UIViewController {
 
-    @IBOutlet var animationView: AnimationView!
+    @IBOutlet weak var animationView: AnimationView!
     
     static let identifier = "HomePageContainerVC"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLottieView()
@@ -24,7 +25,4 @@ class HomePageContainerVC: UIViewController {
         animationView.animationSpeed = animationSpeed
         animationView.contentMode = contentMode
     }
-    
-
-
 }

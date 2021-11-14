@@ -13,7 +13,7 @@ final class HomepageVC : UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var identifyBtn: UIButton!
-    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var contentView: UIView!
     
     //MARK: - Variables
     private let presenter = HomepagePresenter()

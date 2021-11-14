@@ -8,7 +8,8 @@
 import Foundation
 import Vision
 
-//MARK:- Recognize Text in Images , https://developer.apple.com/documentation/vision/recognizing_text_in_images/
+//MARK: - Recognize Text in Images ,
+//https://developer.apple.com/documentation/vision/recognizing_text_in_images/
 final class TextAnalysisInteractor {
     
     private let newsClassifier = try! NewsClassifier(configuration: .init())
@@ -25,8 +26,8 @@ final class TextAnalysisInteractor {
     
     func processImageToText(imageData : Data, completion : @escaping ((String)-> Void) ) {
         // Create a request to recognize text
-        let request = VNRecognizeTextRequest { request, error in
-           let textFilteringResults =  self.filterTextResults(request: request, error: error)
+        let request = VNRecognizeTextRequest { [weak self] request, error in
+            guard let textFilteringResults =  self?.filterTextResults(request: request, error: error) else {return}
             completion(textFilteringResults)
         }
         request.recognitionLevel = .accurate

@@ -25,14 +25,15 @@ final class IdentifyNewsPresenter {
     
     func makePredictions(text : String) {
         if let results = textAnalystInteractor.predictText(text) {
-         //   print("Results : \(results.capitalized)")
             delegate?.presentPredictions(results.capitalized)
         }
     }
     
     func analyseTextIn(image : Data) {
-        textAnalystInteractor.processImageToText(imageData: image) { results in
-            self.delegate?.presentText(results : results)
+        textAnalystInteractor.processImageToText(imageData: image) { [weak self] results in
+            DispatchQueue.main.async {
+                self?.delegate?.presentText(results : results)
+            }
         }
     }
     

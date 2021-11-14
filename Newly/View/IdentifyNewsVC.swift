@@ -24,8 +24,8 @@ final class IdentifyNewsVC: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cameraBtn: UIButton!
     
-    private let imagePicker = UIImagePickerController()
-    private let documentPicker = VNDocumentCameraViewController()
+    private lazy var imagePicker = UIImagePickerController()
+    private lazy var documentPicker = VNDocumentCameraViewController()
     private let presenter = IdentifyNewsPresenter()
     static let segueIdentifier = "goToNewsVC"
     
@@ -73,6 +73,10 @@ extension IdentifyNewsVC : UIImagePickerControllerDelegate {
         }
         // Translate image to text
         presenter.analyseTextIn(image: imageData)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
