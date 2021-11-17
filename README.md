@@ -4,6 +4,11 @@
 - Text Classifier App for iOS, powered by Apple Vision &amp; CreateML framework
 -  <a href="https://testflight.apple.com/join/O9AemLOu">Test Flight<a/>
 
+  
+<img width ="200" src="https://user-images.githubusercontent.com/59039044/142095058-63924830-7c0e-4a01-aeba-5bd294b6e561.mov">
+
+
+
 
 ## Description
 - Extract text from images
